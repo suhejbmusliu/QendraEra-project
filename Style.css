@@ -1,15 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300&family=Montserrat:wght@300&family=Nunito:wght@300&family=Rubik:wght@300&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300&family=Montserrat:wght@300&family=Nunito:wght@300&family=Rubik:wght@300&family=Ubuntu:wght@400;500&display=swap');
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'League Spartan', sans-serif;
+  scroll-behavior: smooth;
+  font-family: 'Jost', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-family: 'Nunito', sans-serif;
+  font-family: 'Rubik', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 
-
+html, body {
+  scroll-behavior: smooth;
+  font-family: 'Jost', 'Montserrat', 'Nunito', 'Rubik', 'Ubuntu', sans-serif;
+}
 nav {
+  position: fixed;
   display: flex;
   height: 80px;
   width: 100%;
@@ -31,11 +38,11 @@ nav ul {
   list-style: none;
 }
 
-nav ul li {
+nav ul a {
   margin: 0 5px;
 }
 
-nav ul li a {
+nav ul a {
   color: #000000;
   text-decoration: none;
   font-size: 18px;
@@ -46,21 +53,10 @@ nav ul li a {
   transition: all 0.3s ease;
 }
 
-nav ul li a.active,
-nav ul li a:hover {
+nav ul  a.active,
+nav ul  a:hover {
   color: white;
   background: #00308F;
-}
-
-nav .menu-btn i {
-  color: #00308F;
-  font-size: 22px;
-  cursor: pointer;
-  display: none;
-}
-
-input[type="checkbox"] {
-  display: none;
 }
 
 @media (max-width: 1000px) {
@@ -70,14 +66,7 @@ input[type="checkbox"] {
 }
 
 @media (max-width: 920px) {
-  nav .menu-btn i {
-    display: block;
-  }
-
-  #click:checked~.menu-btn i:before {
-    content: "\f00d";
-  }
-
+ 
   nav {
     position: fixed;
     top: 0;
@@ -102,12 +91,12 @@ input[type="checkbox"] {
     left: 0;
   }
 
-  nav ul li {
+  nav ul a {
     width: 100%;
     margin: 40px 0;
   }
 
-  nav ul li a {
+  nav ul  a {
     width: 100%;
     margin-left: -100%;
     display: block;
@@ -115,7 +104,7 @@ input[type="checkbox"] {
     transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
-  #click:checked~ul li a {
+  #click:checked~ul a {
     margin-left: 0px;
   }
 
@@ -180,9 +169,9 @@ input[type="checkbox"] {
 
 .columns {
   margin: 0px;
-  padding: 0px;
+  padding: 40px;
   font-family: Arial, sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -193,7 +182,7 @@ input[type="checkbox"] {
 .column {
   margin-top: 10px;
   color: #fff;
-  padding: 20px;
+  padding: 50px;
   border-radius: 8px;
   text-align: left;
   width: calc(33.33% - 20px);
@@ -221,6 +210,7 @@ input[type="checkbox"] {
 @media (max-width: 480px) {
   .column {
     width: 100%;
+    padding: 15px;
   }
 }
 /*About US*/
@@ -230,7 +220,7 @@ input[type="checkbox"] {
   justify-content: space-around;
   align-items: center;
   padding-top: 20px;
-  background-color: rgb(255, 255, 255);
+  background: rgba(255, 255, 255, 4) url('img/kids-playing-with-play-dough.jpg') center/cover no-repeat;
 }
 
 .aboutus img {
@@ -243,9 +233,8 @@ input[type="checkbox"] {
   max-width: 600px;
   height: 400px;
   padding: 20px;
-  border-style: solid;
   border-radius: 15px;
-  border-color: #00308F;
+  background-color: #ffffff;
 }
 
 .aboutus-details h2 {
@@ -285,6 +274,7 @@ input[type="checkbox"] {
     text-align: center;
     font-size: 50px;
     margin-bottom: 20px;
+    margin-top: 20px;
     color: #00308F;
   }
 .profile-card {
@@ -400,7 +390,67 @@ input[type="checkbox"] {
     grid-auto-columns: 100%;
   }
 }
+/*Testiminioals*/
+.Testimonials {
+  margin: 10px 200px 10px 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.h1Testimonials {
+  text-align: center;
+  font-size: 50px;
+  margin-top: 20PX;
+  margin-bottom: 20px;
+  color: #00308F;
+}
+
+
+.testimonials-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.testimonial-box {
+  flex: 1;
+  margin: 10px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.large-box {
+  flex-basis: 60%; 
+  background-color: #004f8f;
+}
+
+.medium-box {
+  flex-basis: 40%; 
+  background-color: #219ebc;
+}
+
+.small-box {
+  flex-basis: 30%; 
+  background-color: #219ebc;
+}
+
+.testimonial-box p {
+  margin: 0;
+  color: #ffffff;
+  font-size: large;
+}
+
+@media (max-width: 768px) {
+  .testimonial-box {
+    flex-basis: 100%;
+  }
+  .Testimonials{
+    margin: 5px 5px 5px 5px;
+  }
+}
 /*Contac-info*/
 .h1contact {
     text-align: center;
@@ -427,7 +477,7 @@ input[type="checkbox"] {
   border-radius: 6px;
   padding: 20px 60px 30px 40px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  margin-left: 200px;
+  margin: auto;
   margin-bottom: 50px;
 }
 .contact .content {
