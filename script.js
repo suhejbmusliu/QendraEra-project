@@ -1,4 +1,3 @@
-
 const wrapper = document.querySelector(".wrapper");
 const carousel = document.querySelector(".carousel");
 const firstCardWidth = carousel.querySelector(".card").offsetWidth;
@@ -36,8 +35,8 @@ const dragStart = (e) => {
 }
 
 const dragging = (e) => {
-    if(!isDragging) return; 
-    
+    if (!isDragging) return;
+
     carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
 }
 
@@ -47,25 +46,25 @@ const dragStop = () => {
 }
 
 const infiniteScroll = () => {
-   
-    if(carousel.scrollLeft === 0) {
+
+    if (carousel.scrollLeft === 0) {
         carousel.classList.add("no-transition");
         carousel.scrollLeft = carousel.scrollWidth - (2 * carousel.offsetWidth);
         carousel.classList.remove("no-transition");
     }
-    
-    else if(Math.ceil(carousel.scrollLeft) === carousel.scrollWidth - carousel.offsetWidth) {
+
+    else if (Math.ceil(carousel.scrollLeft) === carousel.scrollWidth - carousel.offsetWidth) {
         carousel.classList.add("no-transition");
         carousel.scrollLeft = carousel.offsetWidth;
         carousel.classList.remove("no-transition");
     }
 
     clearTimeout(timeoutId);
-    if(!wrapper.matches(":hover")) autoPlay();
+    if (!wrapper.matches(":hover")) autoPlay();
 }
 
 const autoPlay = () => {
-    if(window.innerWidth < 800 || !isAutoPlay) return; 
+    if (window.innerWidth < 800 || !isAutoPlay) return;
     timeoutId = setTimeout(() => carousel.scrollLeft += firstCardWidth, 2500);
 }
 
@@ -78,6 +77,7 @@ wrapper.addEventListener("mouseleave", autoPlay);
 
 let sections = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header nav a');
+let navBar; // Declare navBar here
 
 window.onscroll = () => {
     sections.forEach(sec => {
@@ -86,8 +86,8 @@ window.onscroll = () => {
         let height = sec.offsetHeight;
         let id = sec.getAttribute('id');
 
-        if(top >= offset && top < offset + height) {
-        
+        if (top >= offset && top < offset + height) {
+
             if (navLinks.length > 0) {
                 navLinks.forEach(links => {
                     links.classList.remove('active');
@@ -113,12 +113,12 @@ navLinks.forEach(link => {
             behavior: 'smooth'
         });
 
-        navBar.classList.remove("active");
+        navBar.classList.remove("active"); // Use navBar here
     });
 });
 
-hamburger = document.querySelector(".hamburger");
-hamburger.onclick = function(){
+let hamburger = document.querySelector(".hamburger");
+hamburger.onclick = function () {
     navBar = document.querySelector(".nav-bar");
     navBar.classList.toggle("active");
 }
@@ -126,11 +126,10 @@ hamburger.onclick = function(){
 window.addEventListener("scroll", function () {
     var header = document.querySelector("header");
     var scrollPosition = window.scrollY;
-  
+
     if (scrollPosition > 80) {
-      header.classList.add("fixed-header");
+        header.classList.add("fixed-header");
     } else {
-      header.classList.remove("fixed-header");
+        header.classList.remove("fixed-header");
     }
-  });
-    
+});
