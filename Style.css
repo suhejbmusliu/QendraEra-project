@@ -37,8 +37,6 @@ header {
   top: 0;
   width: 100%;
   z-index: 1000;
-  background: #ffffff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 
@@ -46,6 +44,7 @@ header {
   font-size: 28px;
   font-weight: bold;
   color: #00308F;
+  filter: brightness(1.5)contrast(1.0);
 }
 
 .hamburger {
@@ -567,12 +566,14 @@ header {
   }
   .contact .content .right-side {
     width: 75%;
-    margin-left: 55px;
+    margin-left: 50px;
   }
 }
 @media (max-width: 820px) {
   .right-side img{
-    width: 300px;
+    width: 330px;
+    align-items: center;
+    
   }
   .contact {
     margin: 40px 0 20px 20px;
@@ -585,6 +586,7 @@ header {
     width: 100%;
     flex-direction: row;
     margin-top: 40px;
+    margin-right: 49px;
     justify-content: center;
     flex-wrap: wrap;
   }
@@ -593,7 +595,8 @@ header {
   }
   .contact .content .right-side {
     width: 100%;
-    margin-left: 0;
+    margin-left: auto;
+    
   }
 }
 /*Footer*/
@@ -627,7 +630,7 @@ header {
   /* The company logo */
   
   .footer-distributed h3{
-    color:  #ffffff;
+    color:  #b99d9d;
     font: normal 36px 'Open Sans', cursive;
     margin: 0;
   }
@@ -647,13 +650,13 @@ header {
   .footer-distributed .footer-links a{
     display:inline-block;
     line-height: 1.8;
-  font-weight:400;
+    font-weight:400;
     text-decoration: none;
     color:  inherit;
   }
   
   .footer-distributed .footer-company-name{
-    color:  #222;
+    color:  #ffffff;
     font-size: 14px;
     font-weight: normal;
     margin: 0;
@@ -686,9 +689,10 @@ header {
   .footer-distributed .footer-center p{
     display: inline-block;
     color: #ffffff;
-  font-weight:400;
+    font-weight:400;
     vertical-align: middle;
     margin:0;
+    
   }
   
   .footer-distributed .footer-center p span{
