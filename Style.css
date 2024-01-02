@@ -10,9 +10,6 @@
   font-family: 'Ubuntu', sans-serif;
 }
 
-html{
-  scroll-behavior: smooth;
-}
 body {
   transition: background 0.3s, color 0.3s;
 }
